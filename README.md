@@ -163,7 +163,7 @@ This application implements a **conversational AI pipeline** using the following
 
 ### Protected Information
 
-This repository **DOES NOT** and **MUST NOT** contain:
+This repository **DOES NOT** contain:
 
 - ❌ OpenAI API keys
 - ❌ Authentication tokens
@@ -174,93 +174,10 @@ This repository **DOES NOT** and **MUST NOT** contain:
 ### Safe Configuration
 
 ✅ **What IS included**:
-- `.env.example` - Template file showing required variables (with placeholder values)
-- Source code without hardcoded secrets
-- Documentation on how to configure secrets locally
-
-✅ **What IS in `.gitignore`**:
-```
-.env
-*.pdf
-__pycache__/
-*.pyc
-```
-
-### Best Practices
-
-1. **API Key Storage**:
-   - Store API keys in `.env` file (never commit to Git)
-   - Use environment variables for sensitive data
-   - Rotate keys if accidentally exposed
-
-2. **Version Control**:
-   - Always use `.gitignore` to exclude `.env`
-   - Review commits before pushing to ensure no secrets leaked
-   - Use tools like `git-secrets` or `truffleHog` for automated scanning
-
-3. **Sharing the Project**:
-   - Share only source code and documentation
-   - Recipients must obtain their own API keys
-   - Include clear instructions in README (this document)
-
-4. **If Secrets Are Exposed**:
-   - Immediately revoke/regenerate the API key at https://platform.openai.com/api-keys
-   - Remove the file from Git history using `git filter-branch` or BFG Repo-Cleaner
-   - Notify relevant parties if credential exposure poses risk
-
----
-
-## 📁 File Structure
-
-```
-travel_guide/
-├── travel_guide.py          # Main application code
-├── requirements.txt         # Python dependencies
-├── .env.example            # Environment template (safe to commit)
-├── .env                    # Your actual secrets (NEVER COMMIT)
-├── .gitignore              # Excludes sensitive files
-├── README.md               # This documentation
-└── CHANGES_EXPLAINED.md    # Development notes
-```
-
----
-
-## 🛠️ Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| **"Missing dependency" error** | Run `pip install -r requirements.txt` |
-| **"Invalid API key" (401 error)** | Verify `.env` file exists with correct `OPENAI_API_KEY=sk-...` format |
-| **"Model not available" error** | App auto-falls back to alternative models; check OpenAI account status |
-| **Empty response from API** | Check API quota/credits at https://platform.openai.com/usage |
-
----
-
-## 📊 Technical Stack
-
-- **Frontend**: Streamlit (Python web framework)
-- **AI/LLM**: OpenAI GPT-4o, GPT-4o-mini, GPT-4-turbo
-- **PDF Generation**: ReportLab
-- **Environment Management**: python-dotenv
-- **Language**: Python 3.8+
-
----
-
-## 📝 Notes
-
-- Each API call consumes OpenAI credits based on token usage
-- Longer trips (more days) require more tokens and cost more
-- The application does not persist data between sessions
-- PDF files are generated locally in the project directory
-
----
-
-## 📄 License
-
-This project is free to use and modify for educational, personal, or commercial purposes.
-
----
+- READNE file
+- Python Project file
+- Requirement.txt file
 
 **Developer**: Ahmad Khan  
 **Course**: AI Practitioner Class - Assignment 6  
-**Date**: 2026
+**Date**: February 1st 2026
